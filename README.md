@@ -1,18 +1,25 @@
-# Genera Purpose
-Simple Python script which uses Third Order Spline Functions to memic my proffessor's wrting ;)
-
+# General Purpose
+- Simple Python script which utilizes <b>Third Order Spline Functions</b> to mimic my proffessor's wrting ;)
+- [mathworld.wolfram.com/CubicSpline](https://mathworld.wolfram.com/CubicSpline.html)
 # To Run
 - install matplotlib
 - install opencv
 
 # How to use
-1. Using coords.py script plot nodes of the splines (left mouse click to add a node, right click to end a stroke)
-### How the coordinates are plotted
-![alt text](https://github.com/porfinogeneta/SignatureRecreation/blob/master/dots.png)
-2. Run the script and enjoy the spline plot!
-### Compare original with result
-#### Original:
-![alt text](https://github.com/porfinogeneta/SignatureRecreation/blob/master/original.png)
-#### Result:
-![alt text](https://github.com/porfinogeneta/SignatureRecreation/blob/master/result.jpg)
-   
+### 1. Plot nodes - coords.py
+#### How the coordinates are plotted
+<p align="center">
+  <img src="https://github.com/porfinogeneta/SignatureRecreation/blob/master/dots.png" />
+</p>
+
+### 2. Run - main.py
+#### Compare original with result
+Original:
+<p align="center">
+     <img src="https://github.com/porfinogeneta/SignatureRecreation/blob/master/original.png"/>
+   <br>
+</p>
+Result:
+<p align="center">
+   <img src="https://github.com/porfinogeneta/SignatureRecreation/blob/master/result.jpg"/>
+</p>
