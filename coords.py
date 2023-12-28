@@ -19,7 +19,7 @@ def click_event(event, x, y, flags, params):
 
 
 if __name__ == '__main__':
-    img = cv2.imread('napis.png', 1)
+    img = cv2.imread('original.png', 1)
     imgS = cv2.resize(img, None, fx=2.0, fy=2.0)
     cv2.imshow('image', imgS)
     cv2.setMouseCallback('image', click_event)

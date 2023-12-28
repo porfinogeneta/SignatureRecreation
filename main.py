@@ -57,7 +57,7 @@ def draw(M, values_x, values_y, ts_x, ts_y, quality = 500):
 
     x_points = []
     y_points = []
-    # for every generated argument we find a suitable function
+    # for every generated argument we find backups.txt suitable function
     # from the generated functions, based on ranges of each function
     for a in draw_args:
         for i, t in enumerate(ts_x):
@@ -68,11 +68,8 @@ def draw(M, values_x, values_y, ts_x, ts_y, quality = 500):
             if a < t:
                 y_points.append(formulas_y[i - 1](a))
                 break
-    # adding first point at the end of an array to connect all points with polyline
-    # x_points.append(x_points[0])
-    # y_points.append(y_points[0])
-    # plt.gca().invert_yaxis()
-    plt.plot(x_points, y_points, marker='o', linestyle='-', color='b', markersize=1)
+
+    plt.plot(x_points, y_points, marker='o', linestyle='-', color='#ea6193', markersize=0.1)
 
 
 
@@ -91,15 +88,24 @@ def forge():
     strokes_y = getCoords('clicked_y.txt')
 
 
+
     for i in range(len(strokes_x)):
         M = len(strokes_x[i]) - 1
-        # for dot, interpolation is a dot
+        # for dot, interpolation is backups.txt dot
         if M != 0:
             ts = [i / M for i in range(M + 1)]
+            with open('args.txt', 'a') as f:
+                f.write(str(ts) + '\n')
             draw(M, strokes_x[i], strokes_y[i], ts, ts)
+        else:
+            plt.plot(strokes_x[i], strokes_y[i], marker='o', linestyle='-', color='r', markersize=0.5)
 
     plt.gca().invert_yaxis()
+    plt.axis('equal')
+    plt.savefig("result.jpg")
+    plt.savefig("result.png")
     plt.show()
+
 
 if __name__ == '__main__':
     forge()
