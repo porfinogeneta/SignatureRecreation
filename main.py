@@ -86,6 +86,8 @@ def forge():
     # get list of list of strokes
     strokes_x = getCoords('clicked_x.txt')
     strokes_y = getCoords('clicked_y.txt')
+    # clear the file before
+    open('args.txt', 'w').close()
 
 
 
@@ -103,7 +105,6 @@ def forge():
     plt.gca().invert_yaxis()
     plt.axis('equal')
     plt.savefig("result.jpg")
-    plt.savefig("result.png")
     plt.show()
 
 

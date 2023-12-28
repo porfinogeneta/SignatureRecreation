@@ -19,6 +19,9 @@ def click_event(event, x, y, flags, params):
 
 
 if __name__ == '__main__':
+    # clear files, before adding new coordinates
+    open('clicked_x.txt', 'w').close()
+    open('clicked_y.txt', 'w').close()
     img = cv2.imread('original.png', 1)
     imgS = cv2.resize(img, None, fx=2.0, fy=2.0)
     cv2.imshow('image', imgS)
